@@ -28,6 +28,8 @@ public class Language
 	private HashMap<String, LanguageFile>	files;
 	/** the folder where all language files lay in */
 	private String							folder;
+	/** the string to use for unknown words */
+	public static final String		UNKNOWN_WORD	= "(?)";
 
 	/**
 	 * Initializes the language
@@ -101,12 +103,12 @@ public class Language
 	{
 		LanguageFile f = files.get(file);
 		if (f == null)
-			return Global.UNKNOWN_WORD;
+			return UNKNOWN_WORD;
 
 		String t = f.getTranslation(group, attr_id);
 
 		// fall back if the translation can not be found
-		if (t == Global.UNKNOWN_WORD && !isFallBackLang && fallBackLang != null)
+		if (t == UNKNOWN_WORD && !isFallBackLang && fallBackLang != null)
 			t = fallBackLang.getTranslation(file, group, attr_id);
 
 		return t;

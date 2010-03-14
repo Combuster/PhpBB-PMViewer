@@ -10,6 +10,9 @@ import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+import views.FilterView;
+import views.MessagesView;
+
 /**
  * 
  * @author Robert Heim
@@ -23,7 +26,8 @@ public class Gui {
 	public Boolean isReady = false;
 	private JFrame frame;
 	private String frameName;
-
+	private MessagesView messagesView;
+	private FilterView filterView;
 	/**
 	 * Initializes, builds and starts the GUI.
 	 */
@@ -82,13 +86,14 @@ public class Gui {
 
 		// Create the menu bar.
 		menuBar = new JMenuBar();
-
+		
+		PMViewer PMV = PMViewer.getInstance();
 		// Build main menu.
-		menu = new JMenu(Global.lang.getTranslation("BASIC", "PNVIEWER"));
+		menu = new JMenu(PMV.getLanguage().getTranslation("BASIC", "PNVIEWER"));
 		menu.setMnemonic(KeyEvent.VK_P);
 		menuBar.add(menu);
 
-		JMenuItem open = new JMenuItem(Global.lang.getTranslation("BASIC",
+		JMenuItem open = new JMenuItem(PMV.getLanguage().getTranslation("BASIC",
 				"OPEN"), KeyEvent.VK_O);
 		menu.add(open);
 
