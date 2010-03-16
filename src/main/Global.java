@@ -16,5 +16,6 @@ public class Global
 	public static final String PMVIEWER_FILTER_INPUT_DATE_FORMAT = "dd.MM.yyyy";
 	// ISO 8601 date
 	public static final String PHPBB_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss+00:00";
+	public static final String PHPBB_DATE_FORMAT_OLD = "dd.MM.yyyy HH:mm";
 
 }

@@ -4,6 +4,7 @@
 package main;
 
 import java.io.File;
+import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -56,7 +57,7 @@ public class PMViewer {
 		PMV.readFolders();
 
 		PMV.setFilterController(new FilterController());
-		
+
 		// Set up the GUI
 		PMV.gui = new Gui(applicationName + " " + version);
 		PMV.gui.getFrame().setJMenuBar(PMV.gui.createMenuBar());
@@ -141,7 +142,8 @@ public class PMViewer {
 	}
 
 	/**
-	 * @param filterController the filterController to set
+	 * @param filterController
+	 *            the filterController to set
 	 */
 	public void setFilterController(FilterController filterController) {
 		this.filterController = filterController;
@@ -221,28 +223,46 @@ public class PMViewer {
 	 * @param folder
 	 *            the folder to add the messages to
 	 */
-	public void readFile(File file, Folder folder) {
+	private void readFile(File file, Folder folder) {
 		// TODO create MessagesFile between Folders and Messages
 		XMLDocument doc = new XMLDocument(file);
 		XMLNode phpBB = doc.getRootElement();
 		// read messages
 		Vector<XMLNode> pms = phpBB.getChildren("privmsg");
 		for (XMLNode p : pms) {
-			String sender = p.getChildText("sender");
-			String subject = p.getChildText("subject");
-			// TODO read Date of the message from file
-			SimpleDateFormat sdf = new SimpleDateFormat(Global.PHPBB_DATE_FORMAT);
+			String sender = utf8ToUnicode(p.getChildText("sender"));
+			String subject = utf8ToUnicode(p.getChildText("subject"));
+
 			Date date = null;
 			try {
+				SimpleDateFormat sdf = new SimpleDateFormat(
+						Global.PHPBB_DATE_FORMAT);
 				date = sdf.parse(p.getChildText("date"));
 			} catch (ParseException e) {
-				date = new Date(0);
+				try {
+					// old date-format
+					SimpleDateFormat sdf = new SimpleDateFormat(
+							Global.PHPBB_DATE_FORMAT_OLD);
+					date = sdf.parse(p.getChildText("date"));
+				} catch (ParseException e2) {
+					// error
+					date = new Date(0);
+				}
 			}
 
-			String message = p.getChildText("message");
+			String message = utf8ToUnicode(p.getChildText("message"));
 
 			Message m = new Message(file, sender, subject, date, message);
 			folder.addMessage(m);
+		}
+	}
+	
+	private String utf8ToUnicode(String s)
+	{
+		try {
+			return new String(s.getBytes(), "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			return "UTF-8 ERROR";
 		}
 	}
 }
