@@ -10,9 +10,23 @@ But you are able to export the messages in e.g. xml-format.
 If you do so, you just may save them in a folder, naming the files like you want.
 NOW you can use the PMViewer to browse through and read your old messages.
 
+Where to get the PMViewer?
+==========================
+* See http://www.robert-heim.de/PMViewer for more information
+* Source-Code: http://github.com/Combuster/PhpBB-PMViewer
+
 INSTALL
 =======
-* until now you have to compile it yourself: http://java.sun.com/javase/downloads/index.jsp
+1) Get and compile
+	* Until now you have to compile the PMViewer by yourself
+		* Get a compiler: http://java.sun.com/javase/downloads/index.jsp
+		* Get PMViewer source-code: http://github.com/Combuster/PhpBB-PMViewer
+2) Messages
+	* Put your messages in the data/ directory.
+3) Browse/read
+	* Start the PMViewer. You may filter your PMs in the Filter-View by selecting PMs in the table
+	  and/or by using the filter-form.
+	* Smile! :-)
 
 TODO for v0.1.0
 ===============
