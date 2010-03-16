@@ -2,5 +2,17 @@
     <group id="BASIC">
 		<entry id="PNVIEWER">PNViewer</entry>
 		<entry id="OPEN">Open</entry>
+		<entry id="FOLDER">Folder</entry>
+		<entry id="FILE">File</entry>
+		<entry id="SUBJECT">Subject</entry>
+		<entry id="SENDER">Sender</entry>
+		<entry id="DATE">Date</entry>
+		<entry id="DATE_FROM">Date from</entry>
+		<entry id="DATE_TO">Date to</entry>
+		<entry id="FILTER">Filter</entry>
+		<entry id="CLEAR">Clear</entry>
+		<entry id="MESSAGES_VIEW">Messages-View</entry>
+		<entry id="FILTER_VIEW">Filter-View</entry>
+		<entry id="MESSAGE">Message</entry>
 	</group>
 </lang>

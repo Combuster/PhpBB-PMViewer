@@ -7,8 +7,6 @@ package models;
 
 import java.util.HashMap;
 
-import main.Global;
-
 /**
  * Implements the Language functionality of the GameTracker.
  * 

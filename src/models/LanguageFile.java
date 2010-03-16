@@ -7,7 +7,6 @@ package models;
 import java.util.HashMap;
 import java.util.Vector;
 
-import main.Global;
 import utilities.xml.XMLDocument;
 import utilities.xml.XMLNode;
 

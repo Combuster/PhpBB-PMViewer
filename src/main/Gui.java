@@ -1,12 +1,14 @@
 package main;
 
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.awt.event.KeyEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
@@ -23,21 +25,29 @@ public class Gui {
 	private JScrollPane scrollPane;
 	public JTextArea output;
 	private JFrame outputFrame;
-	public Boolean isReady = false;
 	private JFrame frame;
 	private String frameName;
 	private MessagesView messagesView;
 	private FilterView filterView;
+
 	/**
 	 * Initializes, builds and starts the GUI.
 	 */
 	public Gui(String frameName) {
 		this.frameName = frameName;
-		createGUI();
-		runGUI();
+		setFilterView(new FilterView(PMViewer.getInstance().getAllMessages()));
+		setMessagesView(new MessagesView());
+		filterView.setMessagesView(messagesView);
+		messagesView.update(PMViewer.getInstance().getAllMessages());
+		
+		createGui();
+		runGui();
 	}
 
-	public void runGUI() {
+	/**
+	 * runs the GUI and sets the frame visible.
+	 */
+	public void runGui() {
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				frame.setVisible(true);
@@ -48,7 +58,7 @@ public class Gui {
 	/**
 	 * creates and shows the GUI
 	 */
-	private void createGUI() {
+	private void createGui() {
 		// Debugging output
 		outputFrame = new JFrame("Output");
 		output = new JTextArea(10, 30);
@@ -63,9 +73,13 @@ public class Gui {
 		frame = new JFrame(frameName);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		frame.setSize(400, 300);
+		frame.setSize(800, 700);
 		frame.setLocationRelativeTo(null); // center frame
-		isReady = true;
+		frame.setContentPane(new JPanel(new GridLayout(2, 0)));
+		
+		frame.getContentPane().add(filterView.getPanel());
+		frame.getContentPane().add(messagesView.getPanel());
+
 	}
 
 	/**
@@ -73,6 +87,36 @@ public class Gui {
 	 */
 	public JFrame getFrame() {
 		return frame;
+	}
+
+	/**
+	 * @param messagesView
+	 *            the messagesView to set
+	 */
+	public void setMessagesView(MessagesView messagesView) {
+		this.messagesView = messagesView;
+	}
+
+	/**
+	 * @return the messagesView
+	 */
+	public MessagesView getMessagesView() {
+		return messagesView;
+	}
+
+	/**
+	 * @param filterView
+	 *            the filterView to set
+	 */
+	public void setFilterView(FilterView filterView) {
+		this.filterView = filterView;
+	}
+
+	/**
+	 * @return the filterView
+	 */
+	public FilterView getFilterView() {
+		return filterView;
 	}
 
 	/**
@@ -86,15 +130,15 @@ public class Gui {
 
 		// Create the menu bar.
 		menuBar = new JMenuBar();
-		
+
 		PMViewer PMV = PMViewer.getInstance();
 		// Build main menu.
 		menu = new JMenu(PMV.getLanguage().getTranslation("BASIC", "PNVIEWER"));
 		menu.setMnemonic(KeyEvent.VK_P);
 		menuBar.add(menu);
 
-		JMenuItem open = new JMenuItem(PMV.getLanguage().getTranslation("BASIC",
-				"OPEN"), KeyEvent.VK_O);
+		JMenuItem open = new JMenuItem(PMV.getLanguage().getTranslation(
+				"BASIC", "OPEN"), KeyEvent.VK_O);
 		menu.add(open);
 
 		return menuBar;

@@ -10,6 +10,7 @@
 		<subject>An other subject</subject>
 		<sender>user2</sender>
 		<date>2010-03-07T20:09:38+00:00</date>
-		<message>Hi, this is an other message!</message>
+		<message>Hi, this is an other message!
+it containts a linebreak</message>
 	</privmsg>
 </phpbb>

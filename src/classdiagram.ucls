@@ -1,16 +1,8 @@
 <class-diagram version="0.9.86" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true">  
-  <class corner="BOTTOM_RIGHT" language="java" name="views.MessageView" project="PhpBB-PMViewer" 
-    file="/PhpBB-PMViewer/src/views/MessageView.java" binary="false">    
-    <position x="757" y="706" width="-1" height="-1"/>    
-    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true"/>      
-      <operations public="true" package="true" protected="true" private="true"/>    
-    </display>  
-  </class>  
   <class corner="BOTTOM_RIGHT" language="java" name="views.MessagesView" project="PhpBB-PMViewer" 
     file="/PhpBB-PMViewer/src/views/MessagesView.java" binary="false">    
-    <position x="764" y="529" width="-1" height="-1"/>    
+    <position x="863" y="598" width="-1" height="-1"/>    
     <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
       <operations public="true" package="true" protected="true" private="true"/>    
@@ -18,7 +10,7 @@
   </class>  
   <class corner="BOTTOM_RIGHT" language="java" name="main.Gui" project="PhpBB-PMViewer" 
     file="/PhpBB-PMViewer/src/main/Gui.java" binary="false">    
-    <position x="806" y="165" width="159" height="231"/>    
+    <position x="964" y="193" width="159" height="231"/>    
     <display autosize="false" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
       <operations public="true" package="true" protected="true" private="true"/>    
@@ -26,7 +18,7 @@
   </class>  
   <class corner="BOTTOM_RIGHT" language="java" name="main.PMViewer" project="PhpBB-PMViewer" 
     file="/PhpBB-PMViewer/src/main/PMViewer.java" binary="false">    
-    <position x="530" y="148" width="-1" height="-1"/>    
+    <position x="591" y="147" width="-1" height="-1"/>    
     <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
       <operations public="true" package="true" protected="true" private="true"/>    
@@ -66,15 +58,7 @@
   </class>  
   <class corner="BOTTOM_RIGHT" language="java" name="models.Message" project="PhpBB-PMViewer" 
     file="/PhpBB-PMViewer/src/models/Message.java" binary="false">    
-    <position x="530" y="705" width="-1" height="-1"/>    
-    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true"/>      
-      <operations public="true" package="true" protected="true" private="true"/>    
-    </display>  
-  </class>  
-  <class corner="BOTTOM_RIGHT" language="java" name="models.Folder" project="PhpBB-PMViewer" 
-    file="/PhpBB-PMViewer/src/models/Folder.java" binary="false">    
-    <position x="530" y="504" width="-1" height="-1"/>    
+    <position x="593" y="861" width="-1" height="-1"/>    
     <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
       <operations public="true" package="true" protected="true" private="true"/>    
@@ -82,7 +66,7 @@
   </class>  
   <class corner="BOTTOM_RIGHT" language="java" name="views.FilterView" project="PhpBB-PMViewer" 
     file="/PhpBB-PMViewer/src/views/FilterView.java" binary="false">    
-    <position x="1068" y="603" width="-1" height="-1"/>    
+    <position x="1202" y="779" width="-1" height="-1"/>    
     <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
       <operations public="true" package="true" protected="true" private="true"/>    
@@ -96,26 +80,58 @@
       <operations public="true" package="true" protected="true" private="true"/>    
     </display>  
   </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="models.Folder" project="PhpBB-PMViewer" 
+    file="/PhpBB-PMViewer/src/models/Folder.java" binary="false">    
+    <position x="589" y="501" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="views.MessageView" project="PhpBB-PMViewer" 
+    file="/PhpBB-PMViewer/src/views/MessageView.java" binary="false">    
+    <position x="862" y="861" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="controllers.FilterController" project="PhpBB-PMViewer" 
+    file="/PhpBB-PMViewer/src/controllers/FilterController.java" binary="false">    
+    <position x="1282" y="146" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
   <association>    
-    <source project="PhpBB-PMViewer" name="main.Gui" file="/PhpBB-PMViewer/src/main/Gui.java" binary="false" 
-      navigable="false">      
-      <attribute name="filterView"/>      
-      <multiplicity minimum="0" maximum="1"/>    
+    <bendpoint x="1201" y="1120"/>    
+    <bendpoint x="594" y="1120"/>    
+    <source project="PhpBB-PMViewer" name="views.FilterView" file="/PhpBB-PMViewer/src/views/FilterView.java" 
+      binary="false" navigable="false">      
+      <attribute name="messages"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
     </source>    
-    <target project="PhpBB-PMViewer" name="views.FilterView" file="/PhpBB-PMViewer/src/views/FilterView.java" 
-      binary="false" navigable="true"/>    
+    <target project="PhpBB-PMViewer" name="models.Message" file="/PhpBB-PMViewer/src/models/Message.java" binary="false" 
+      navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association>    
-    <bendpoint x="561" y="590"/>    
+    <source project="PhpBB-PMViewer" name="main.PMViewer" file="/PhpBB-PMViewer/src/main/PMViewer.java" binary="false" 
+      navigable="false">      
+      <attribute name="gui"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="PhpBB-PMViewer" name="main.Gui" file="/PhpBB-PMViewer/src/main/Gui.java" binary="false" 
+      navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <bendpoint x="646" y="641"/>    
     <source project="PhpBB-PMViewer" name="models.Folder" file="/PhpBB-PMViewer/src/models/Folder.java" binary="false" 
       navigable="false">      
-      <attribute name="messages">        
-        <position x="555" y="633" width="54" height="14"/>      
-      </attribute>      
-      <multiplicity minimum="0" maximum="2147483647">        
-        <position x="531" y="629" width="17" height="15"/>      
-      </multiplicity>    
+      <attribute name="messages"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
     </source>    
     <target project="PhpBB-PMViewer" name="models.Message" file="/PhpBB-PMViewer/src/models/Message.java" binary="false" 
       navigable="true"/>    
@@ -124,16 +140,28 @@
   <association>    
     <source project="PhpBB-PMViewer" name="models.Language" file="/PhpBB-PMViewer/src/models/Language.java" 
       binary="false" navigable="false">      
-      <attribute name="files"/>      
-      <multiplicity minimum="0" maximum="2147483647"/>    
+      <attribute name="fallBackLang"/>      
+      <multiplicity minimum="0" maximum="1">        
+        <position x="394" y="659" width="18" height="15"/>      
+      </multiplicity>    
     </source>    
-    <target project="PhpBB-PMViewer" name="models.LanguageFile" file="/PhpBB-PMViewer/src/models/LanguageFile.java" 
+    <target project="PhpBB-PMViewer" name="models.Language" file="/PhpBB-PMViewer/src/models/Language.java" 
       binary="false" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association>    
-    <source project="PhpBB-PMViewer" name="main.Gui" file="/PhpBB-PMViewer/src/main/Gui.java" binary="false" 
-      navigable="false">      
+    <source project="PhpBB-PMViewer" name="utilities.xml.XMLDocument" 
+      file="/PhpBB-PMViewer/src/utilities/xml/XMLDocument.java" binary="false" navigable="false">      
+      <attribute name="root"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="PhpBB-PMViewer" name="utilities.xml.XMLNode" file="/PhpBB-PMViewer/src/utilities/xml/XMLNode.java" 
+      binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="PhpBB-PMViewer" name="views.FilterView" file="/PhpBB-PMViewer/src/views/FilterView.java" 
+      binary="false" navigable="false">      
       <attribute name="messagesView"/>      
       <multiplicity minimum="0" maximum="1"/>    
     </source>    
@@ -142,18 +170,28 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association>    
-    <source project="PhpBB-PMViewer" name="views.MessagesView" file="/PhpBB-PMViewer/src/views/MessagesView.java" 
-      binary="false" navigable="false">      
-      <attribute name="messageView"/>      
+    <source project="PhpBB-PMViewer" name="main.PMViewer" file="/PhpBB-PMViewer/src/main/PMViewer.java" binary="false" 
+      navigable="false">      
+      <attribute name="folders"/>      
       <multiplicity minimum="0" maximum="2147483647"/>    
     </source>    
-    <target project="PhpBB-PMViewer" name="views.MessageView" file="/PhpBB-PMViewer/src/views/MessageView.java" 
-      binary="false" navigable="true"/>    
+    <target project="PhpBB-PMViewer" name="models.Folder" file="/PhpBB-PMViewer/src/models/Folder.java" binary="false" 
+      navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association>    
-    <source project="PhpBB-PMViewer" name="views.FilterView" file="/PhpBB-PMViewer/src/views/FilterView.java" 
+    <source project="PhpBB-PMViewer" name="models.LanguageFile" file="/PhpBB-PMViewer/src/models/LanguageFile.java" 
       binary="false" navigable="false">      
+      <attribute name="doc"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="PhpBB-PMViewer" name="utilities.xml.XMLDocument" 
+      file="/PhpBB-PMViewer/src/utilities/xml/XMLDocument.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="PhpBB-PMViewer" name="main.Gui" file="/PhpBB-PMViewer/src/main/Gui.java" binary="false" 
+      navigable="false">      
       <attribute name="messagesView"/>      
       <multiplicity minimum="0" maximum="1"/>    
     </source>    
@@ -172,61 +210,6 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association>    
-    <source project="PhpBB-PMViewer" name="models.Language" file="/PhpBB-PMViewer/src/models/Language.java" 
-      binary="false" navigable="false">      
-      <attribute name="fallBackLang"/>      
-      <multiplicity minimum="0" maximum="1">        
-        <position x="394" y="659" width="18" height="15"/>      
-      </multiplicity>    
-    </source>    
-    <target project="PhpBB-PMViewer" name="models.Language" file="/PhpBB-PMViewer/src/models/Language.java" 
-      binary="false" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association>    
-    <source project="PhpBB-PMViewer" name="models.LanguageFile" file="/PhpBB-PMViewer/src/models/LanguageFile.java" 
-      binary="false" navigable="false">      
-      <attribute name="doc"/>      
-      <multiplicity minimum="0" maximum="1"/>    
-    </source>    
-    <target project="PhpBB-PMViewer" name="utilities.xml.XMLDocument" 
-      file="/PhpBB-PMViewer/src/utilities/xml/XMLDocument.java" binary="false" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association>    
-    <source project="PhpBB-PMViewer" name="utilities.xml.XMLDocument" 
-      file="/PhpBB-PMViewer/src/utilities/xml/XMLDocument.java" binary="false" navigable="false">      
-      <attribute name="root"/>      
-      <multiplicity minimum="0" maximum="1"/>    
-    </source>    
-    <target project="PhpBB-PMViewer" name="utilities.xml.XMLNode" file="/PhpBB-PMViewer/src/utilities/xml/XMLNode.java" 
-      binary="false" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association>    
-    <bendpoint x="1068" y="873"/>    
-    <bendpoint x="531" y="873"/>    
-    <source project="PhpBB-PMViewer" name="views.FilterView" file="/PhpBB-PMViewer/src/views/FilterView.java" 
-      binary="false" navigable="false">      
-      <attribute name="messages"/>      
-      <multiplicity minimum="0" maximum="2147483647"/>    
-    </source>    
-    <target project="PhpBB-PMViewer" name="models.Message" file="/PhpBB-PMViewer/src/models/Message.java" binary="false" 
-      navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association>    
-    <bendpoint x="503" y="585"/>    
-    <source project="PhpBB-PMViewer" name="models.Message" file="/PhpBB-PMViewer/src/models/Message.java" binary="false" 
-      navigable="false">      
-      <attribute name="folder"/>      
-      <multiplicity minimum="0" maximum="1"/>    
-    </source>    
-    <target project="PhpBB-PMViewer" name="models.Folder" file="/PhpBB-PMViewer/src/models/Folder.java" binary="false" 
-      navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association>    
     <source project="PhpBB-PMViewer" name="views.MessageView" file="/PhpBB-PMViewer/src/views/MessageView.java" 
       binary="false" navigable="false">      
       <attribute name="message"/>      
@@ -237,13 +220,43 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association>    
+    <source project="PhpBB-PMViewer" name="views.MessagesView" file="/PhpBB-PMViewer/src/views/MessagesView.java" 
+      binary="false" navigable="false">      
+      <attribute name="messageViews"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="PhpBB-PMViewer" name="views.MessageView" file="/PhpBB-PMViewer/src/views/MessageView.java" 
+      binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
     <source project="PhpBB-PMViewer" name="main.PMViewer" file="/PhpBB-PMViewer/src/main/PMViewer.java" binary="false" 
       navigable="false">      
-      <attribute name="gui"/>      
+      <attribute name="filterController"/>      
       <multiplicity minimum="0" maximum="1"/>    
     </source>    
-    <target project="PhpBB-PMViewer" name="main.Gui" file="/PhpBB-PMViewer/src/main/Gui.java" binary="false" 
-      navigable="true"/>    
+    <target project="PhpBB-PMViewer" name="controllers.FilterController" 
+      file="/PhpBB-PMViewer/src/controllers/FilterController.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="PhpBB-PMViewer" name="main.Gui" file="/PhpBB-PMViewer/src/main/Gui.java" binary="false" 
+      navigable="false">      
+      <attribute name="filterView"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="PhpBB-PMViewer" name="views.FilterView" file="/PhpBB-PMViewer/src/views/FilterView.java" 
+      binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="PhpBB-PMViewer" name="models.Language" file="/PhpBB-PMViewer/src/models/Language.java" 
+      binary="false" navigable="false">      
+      <attribute name="files"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="PhpBB-PMViewer" name="models.LanguageFile" file="/PhpBB-PMViewer/src/models/LanguageFile.java" 
+      binary="false" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" package="true" initial-value="false" signature="true" visibility="true">    

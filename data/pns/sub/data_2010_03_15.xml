@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<phpbb>
+	<privmsg>
+		<subject>A subject</subject>
+		<sender>user1</sender>
+		<date>2010-03-08T18:59:52+00:00</date>
+		<message>Hi, this is a message!</message>
+	</privmsg>
+	<privmsg>
+		<subject>An other subject</subject>
+		<sender>user2</sender>
+		<date>2010-03-07T20:09:38+00:00</date>
+		<message>Hi, this is an other message!
+it containts a linebreak</message>
+	</privmsg>
+	<privmsg>
+		<subject>An other subject</subject>
+		<sender>user2</sender>
+		<date>2010-03-07T20:09:38+00:00</date>
+		<message>Hi, this is an other message!
+it containts a linebreak</message>
+	</privmsg>
+	<privmsg>
+		<subject>An other subject</subject>
+		<sender>user2</sender>
+		<date>2010-03-07T20:09:38+00:00</date>
+		<message>Hi, this is an other message!
+it containts a linebreak</message>
+	</privmsg>
+	<privmsg>
+		<subject>An other subject</subject>
+		<sender>user2</sender>
+		<date>2010-03-07T20:09:38+00:00</date>
+		<message>Hi, this is an other message!
+it containts a linebreak</message>
+	</privmsg>
+	<privmsg>
+		<subject>An other subject</subject>
+		<sender>user2</sender>
+		<date>2010-03-07T20:09:38+00:00</date>
+		<message>Hi, this is an other message!
+it containts a linebreak</message>
+	</privmsg>
+	<privmsg>
+		<subject>An other subject</subject>
+		<sender>user2</sender>
+		<date>2010-03-07T20:09:38+00:00</date>
+		<message>Hi, this is an other message!
+it containts a linebreak</message>
+	</privmsg>
+	<privmsg>
+		<subject>An other subject</subject>
+		<sender>user2</sender>
+		<date>2010-03-07T20:09:38+00:00</date>
+		<message>Hi, this is an other message!
+it containts a linebreak</message>
+	</privmsg>
+	<privmsg>
+		<subject>An other subject</subject>
+		<sender>user2</sender>
+		<date>2010-03-07T20:09:38+00:00</date>
+		<message>Hi, this is an other message!
+it containts a linebreak</message>
+	</privmsg>
+</phpbb>
