@@ -15,16 +15,14 @@ Where to get the PMViewer?
 * See http://www.robert-heim.de/PMViewer for more information
 * Source-Code: http://github.com/Combuster/PhpBB-PMViewer
 
-INSTALL
-=======
-1) Get and compile
-	* Until now you have to compile the PMViewer by yourself
-		* Get a compiler: http://java.sun.com/javase/downloads/index.jsp
-		* Get PMViewer source-code: http://github.com/Combuster/PhpBB-PMViewer
-2) Messages
+INSTALL/USAGE
+=============
+1) Messages
 	* Put your messages in the data/ directory.
+2) Start
+	* Start the PMViewer.jar ("java -jar PMViewer.jar").
 3) Browse/read
-	* Start the PMViewer. You may filter your PMs in the Filter-View by selecting PMs in the table
+	* You may filter your PMs in the Filter-View by selecting PMs in the table
 	  and/or by using the filter-form.
 	* Smile! :-)
 
