@@ -4,9 +4,11 @@ The PMViewer is a tool to read data.xml from the phpBB v3 private-message export
 
 Why PMViewer?
 =============
-Most phpBB 3.x.x boards limit the count of private-messages. If a folder is full, you won't receive any more or old ones are overwritten.
-But you are able to export the messages in e.g. xml-format. If you do so, just save them in a folder, naming the files like you want.
-NOW you can use the PMViewer to read your old messages.
+Most phpBB 3.x.x boards limit the count of private-messages.
+If a folder is full, you won't receive any more or old ones are overwritten.
+But you are able to export the messages in e.g. xml-format.
+If you do so, you just may save them in a folder, naming the files like you want.
+NOW you can use the PMViewer to browse through and read your old messages.
 
 INSTALL
 =======
