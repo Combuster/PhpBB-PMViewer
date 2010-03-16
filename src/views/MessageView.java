@@ -62,9 +62,11 @@ public class MessageView {
 		c1.gridwidth = GridBagConstraints.REMAINDER; // end row
 		//c1.weightx = 0.8;
 		c1.fill = GridBagConstraints.HORIZONTAL;
+		c1.weightx = 0.5;
 		
 		GridBagConstraints c2 = new GridBagConstraints();
 		c2.anchor = GridBagConstraints.FIRST_LINE_START;
+		c2.weightx = 0.5;
 		//c2.fill = GridBagConstraints.HORIZONTAL;
 		
 		panel.add(labelSender, c2);
