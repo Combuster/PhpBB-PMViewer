@@ -27,7 +27,7 @@ import utilities.xml.XMLNode;
 public class PMViewer {
 
 	private static String applicationName = "PMViewer";
-	private static String version = "0.0.8b";
+	private static String version = "0.0.9b";
 	/** Singleton design pattern */
 	private static PMViewer instance;
 	/** folder that contains the data.xml files (or in subfolders) */
@@ -54,7 +54,7 @@ public class PMViewer {
 		PMV.setLanguage(new Language("languages", "en"));
 		PMV.getLanguage().addLanguageFile("main");
 
-		PMV.setFolder("data/pns");
+		PMV.setFolder("data");
 		// get folders and messages
 		PMV.readFolders();
 
@@ -65,9 +65,6 @@ public class PMViewer {
 		PMV.gui = new Gui(applicationName + " " + version);
 		PMV.gui.getFrame().setJMenuBar(
 				PMV.gui.getMainMenuView().createMenuBar());
-
-		PMV.gui.output.append("*** " + applicationName + " " + PMV.getVersion()
-				+ " ***\n");
 
 	}
 
@@ -132,7 +129,7 @@ public class PMViewer {
 
 	/**
 	 * @param gui
-	 *            the guit to set
+	 *            the gui to set
 	 */
 	public void setGui(Gui gui) {
 		this.gui = gui;

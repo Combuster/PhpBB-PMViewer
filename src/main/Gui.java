@@ -1,13 +1,9 @@
 package main;
 
-import java.awt.BorderLayout;
 import java.awt.GridLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-
 import views.FilterView;
 import views.MainMenuView;
 import views.MessagesView;
@@ -18,10 +14,6 @@ import views.MessagesView;
  */
 public class Gui {
 
-	// / the menu for the display
-	private JScrollPane scrollPane;
-	public JTextArea output;
-	private JFrame outputFrame;
 	private JFrame frame;
 	private String frameName;
 	private MessagesView messagesView;
@@ -58,16 +50,6 @@ public class Gui {
 	 * creates and shows the GUI
 	 */
 	private void createGui() {
-		// Debugging output
-		outputFrame = new JFrame("Output");
-		output = new JTextArea(10, 30);
-		output.setEditable(false);
-		scrollPane = new JScrollPane(output);
-		outputFrame.getContentPane().add(scrollPane, BorderLayout.CENTER);
-
-		outputFrame.setSize(400, 300);
-		outputFrame.setVisible(true);
-
 		// Create and set up the window.
 		frame = new JFrame(frameName);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
