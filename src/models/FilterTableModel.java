@@ -23,7 +23,7 @@ public class FilterTableModel extends AbstractTableModel {
 			PMViewer.getInstance().getLanguage().getTranslation("BASIC",
 					"SENDER"),
 			PMViewer.getInstance().getLanguage().getTranslation("BASIC",
-					"FILE") };
+					"PATH") };
 
 	private Vector<Message> messages;
 

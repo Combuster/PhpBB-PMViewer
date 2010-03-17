@@ -19,7 +19,6 @@ import views.FilterView;
 import main.Global;
 import main.PMViewer;
 import models.FilterTableModel;
-import models.Folder;
 import models.Message;
 
 /**
@@ -60,8 +59,8 @@ public class FilterController implements ActionListener, ListSelectionListener {
 			}
 
 			// filter messages to match the users input
-			Vector<Message> msgs = filter(fv.getPathText(), fv
-					.getSubjectText(), fv.getSenderText(), df, dt);
+			Vector<Message> msgs = filter(fv.getPathText(),
+					fv.getSubjectText(), fv.getSenderText(), df, dt);
 			// set/display matching messages
 			fv.setMessages(msgs);
 		}
@@ -113,22 +112,13 @@ public class FilterController implements ActionListener, ListSelectionListener {
 
 		Vector<Message> messages = new Vector<Message>();
 
-		for (Folder f : PMViewer.getInstance().getFolders()) {
-			// TODO add File between Folder and message
-			if (f.getPath().contains(path)) {
-				for (Message m : f.getMessages()) {
-					if ((m.getSubject().toLowerCase().contains(
-							subject.toLowerCase()) && m.getSender()
-							.toLowerCase().contains(sender.toLowerCase()))
-							&& (dateFrom == null
-									|| dateFrom.before(m.getDate()) || dateFrom
-									.equals(m.getDate())
-									&& (dateTo == null
-											|| dateTo.after(m.getDate()) || dateTo
-											.equals(m.getDate())))) {
-						messages.add(m);
-					}
-				}
+		for (Message m : PMViewer.getInstance().getAllMessages()) {
+			if (m.getFile().getPath().toLowerCase().contains(path.toLowerCase())
+					&& m.getSubject().toLowerCase().contains(subject.toLowerCase())
+					&& m.getSender().toLowerCase().contains(sender.toLowerCase())
+					&& (dateFrom == null || dateFrom.before(m.getDate()) || dateFrom.equals(m.getDate())
+					&& (dateTo == null || dateTo.after(m.getDate()) || dateTo.equals(m.getDate())))) {
+				messages.add(m);
 			}
 		}
 
