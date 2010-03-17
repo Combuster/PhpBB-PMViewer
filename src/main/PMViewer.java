@@ -27,7 +27,7 @@ import controllers.MainMenuController;
 public class PMViewer {
 
 	private static String applicationName = "PMViewer";
-	private static String version = "0.0.9b";
+	private static String version = "0.1.0b";
 	/** Singleton design pattern */
 	private static PMViewer instance;
 	/** folder that contains the data.xml files (or in subfolders) */
