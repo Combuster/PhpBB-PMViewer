@@ -2,17 +2,14 @@ package main;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
-import java.awt.event.KeyEvent;
 
 import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 import views.FilterView;
+import views.MainMenuView;
 import views.MessagesView;
 
 /**
@@ -29,6 +26,7 @@ public class Gui {
 	private String frameName;
 	private MessagesView messagesView;
 	private FilterView filterView;
+	private MainMenuView mainMenuView;
 
 	/**
 	 * Initializes, builds and starts the GUI.
@@ -37,9 +35,10 @@ public class Gui {
 		this.frameName = frameName;
 		setFilterView(new FilterView(PMViewer.getInstance().getAllMessages()));
 		setMessagesView(new MessagesView());
+		setMainMenuView(new MainMenuView());
 		filterView.setMessagesView(messagesView);
 		messagesView.update(PMViewer.getInstance().getAllMessages());
-		
+
 		createGui();
 		runGui();
 	}
@@ -76,7 +75,7 @@ public class Gui {
 		frame.setSize(800, 700);
 		frame.setLocationRelativeTo(null); // center frame
 		frame.setContentPane(new JPanel(new GridLayout(2, 0)));
-		
+
 		frame.getContentPane().add(filterView.getPanel());
 		frame.getContentPane().add(messagesView.getPanel());
 
@@ -120,27 +119,17 @@ public class Gui {
 	}
 
 	/**
-	 * Creates the main menuBar.
-	 * 
-	 * @return the menuBar
+	 * @param mainMenuView
+	 *            the mainMenuView to set
 	 */
-	public JMenuBar createMenuBar() {
-		JMenuBar menuBar;
-		JMenu menu;
+	public void setMainMenuView(MainMenuView mainMenuView) {
+		this.mainMenuView = mainMenuView;
+	}
 
-		// Create the menu bar.
-		menuBar = new JMenuBar();
-
-		PMViewer PMV = PMViewer.getInstance();
-		// Build main menu.
-		menu = new JMenu(PMV.getLanguage().getTranslation("BASIC", "PNVIEWER"));
-		menu.setMnemonic(KeyEvent.VK_P);
-		menuBar.add(menu);
-
-		JMenuItem open = new JMenuItem(PMV.getLanguage().getTranslation(
-				"BASIC", "OPEN"), KeyEvent.VK_O);
-		menu.add(open);
-
-		return menuBar;
+	/**
+	 * @return the mainMenuView
+	 */
+	public MainMenuView getMainMenuView() {
+		return mainMenuView;
 	}
 }

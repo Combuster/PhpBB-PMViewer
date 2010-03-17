@@ -12,6 +12,7 @@ import java.util.HashSet;
 import java.util.Vector;
 
 import controllers.FilterController;
+import controllers.MainMenuController;
 
 import models.Folder;
 import models.Language;
@@ -37,6 +38,7 @@ public class PMViewer {
 	private HashSet<Folder> folders;
 	/** Controller for the filter */
 	private FilterController filterController;
+	private MainMenuController mainMenuController;
 
 	/**
 	 * @param args
@@ -57,10 +59,12 @@ public class PMViewer {
 		PMV.readFolders();
 
 		PMV.setFilterController(new FilterController());
+		PMV.setMainMenuController(new MainMenuController());
 
 		// Set up the GUI
 		PMV.gui = new Gui(applicationName + " " + version);
-		PMV.gui.getFrame().setJMenuBar(PMV.gui.createMenuBar());
+		PMV.gui.getFrame().setJMenuBar(
+				PMV.gui.getMainMenuView().createMenuBar());
 
 		PMV.gui.output.append("*** " + applicationName + " " + PMV.getVersion()
 				+ " ***\n");
@@ -154,6 +158,21 @@ public class PMViewer {
 	 */
 	public FilterController getFilterController() {
 		return filterController;
+	}
+
+	/**
+	 * @param mainMenuController
+	 *            the mainMenuController to set
+	 */
+	public void setMainMenuController(MainMenuController mainMenuController) {
+		this.mainMenuController = mainMenuController;
+	}
+
+	/**
+	 * @return the mainMenuController
+	 */
+	public MainMenuController getMainMenuController() {
+		return mainMenuController;
 	}
 
 	/**
@@ -256,13 +275,22 @@ public class PMViewer {
 			folder.addMessage(m);
 		}
 	}
-	
-	private String utf8ToUnicode(String s)
-	{
+
+	private String utf8ToUnicode(String s) {
 		try {
 			return new String(s.getBytes(), "UTF-8");
 		} catch (UnsupportedEncodingException e) {
 			return "UTF-8 ERROR";
 		}
+	}
+
+	/**
+	 * gets some info about the GameTracker
+	 * 
+	 * @return info text about the GameTracker
+	 */
+	public String getInfo() {
+		return "PMViewer\n\nVersion: " + getVersion()
+				+ "\n\nRobert Heim \u00a9 2010";
 	}
 }

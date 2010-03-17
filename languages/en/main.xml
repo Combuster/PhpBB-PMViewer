@@ -1,7 +1,6 @@
 <lang id="en">
     <group id="BASIC">
-		<entry id="PNVIEWER">PNViewer</entry>
-		<entry id="OPEN">Open</entry>
+		<entry id="PMVIEWER">PMViewer</entry>
 		<entry id="FOLDER">Folder</entry>
 		<entry id="FILE">File</entry>
 		<entry id="SUBJECT">Subject</entry>
@@ -14,5 +13,7 @@
 		<entry id="MESSAGES_VIEW">Messages-View</entry>
 		<entry id="FILTER_VIEW">Filter-View</entry>
 		<entry id="MESSAGE">Message</entry>
+		<entry id="INFO">Info</entry>
+		<entry id="EXIT">Exit</entry>
 	</group>
 </lang>
