@@ -49,13 +49,18 @@ public class FilterController implements ActionListener, ListSelectionListener {
 			SimpleDateFormat sdf = new SimpleDateFormat(
 					Global.PMVIEWER_FILTER_INPUT_DATE_FORMAT);
 			Date df = null;
-			Date dt = null;
 			try {
 				df = sdf.parse(fv.getDateFromText());
+			} catch (ParseException e) {
+				; // ignore the date
+				//e.printStackTrace();
+			}
+			Date dt = null;
+			try {
 				dt = sdf.parse(fv.getDateToText());
 			} catch (ParseException e) {
-				; // ignore the dates
-				// e.printStackTrace();
+				; // ignore the date
+				//e.printStackTrace();
 			}
 
 			// filter messages to match the users input
@@ -116,8 +121,8 @@ public class FilterController implements ActionListener, ListSelectionListener {
 			if (m.getFile().getPath().toLowerCase().contains(path.toLowerCase())
 					&& m.getSubject().toLowerCase().contains(subject.toLowerCase())
 					&& m.getSender().toLowerCase().contains(sender.toLowerCase())
-					&& (dateFrom == null || dateFrom.before(m.getDate()) || dateFrom.equals(m.getDate())
-					&& (dateTo == null || dateTo.after(m.getDate()) || dateTo.equals(m.getDate())))) {
+					&& (dateFrom == null || dateFrom.before(m.getDate()) || dateFrom.equals(m.getDate()))
+					&& (dateTo == null || dateTo.after(m.getDate()) || dateTo.equals(m.getDate()))) {
 				messages.add(m);
 			}
 		}

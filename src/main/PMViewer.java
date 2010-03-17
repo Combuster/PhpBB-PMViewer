@@ -243,7 +243,6 @@ public class PMViewer {
 	 *            the folder to add the messages to
 	 */
 	private void readFile(File file, Folder folder) {
-		// TODO create MessagesFile between Folders and Messages
 		XMLDocument doc = new XMLDocument(file);
 		XMLNode phpBB = doc.getRootElement();
 		// read messages

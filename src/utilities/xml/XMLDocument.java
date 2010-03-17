@@ -10,11 +10,10 @@ import java.io.FileReader;
 import nanoxml.XMLElement;
 
 /**
- * This class is a wrapper class, it may
+ * This class is a wrapper class, it may use other libs.
  * 
  * @author Robert Heim
  */
-// TODO make an interface/abstract class
 public class XMLDocument
 {
 	private XMLNode	root;

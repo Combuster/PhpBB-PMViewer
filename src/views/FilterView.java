@@ -48,13 +48,13 @@ public class FilterView {
 		table.getSelectionModel().addListSelectionListener(
 				PMViewer.getInstance().getFilterController());
 
-		labelPath = new JLabel(lang.getTranslation("BASIC", "PATH"));
-		labelSubject = new JLabel(lang.getTranslation("BASIC", "SUBJECT"));
-		labelSender = new JLabel(lang.getTranslation("BASIC", "SENDER"));
+		labelPath = new JLabel(lang.getTranslation("BASIC", "PATH")+":");
+		labelSubject = new JLabel(lang.getTranslation("BASIC", "SUBJECT")+":");
+		labelSender = new JLabel(lang.getTranslation("BASIC", "SENDER")+":");
 		labelDateFrom = new JLabel(lang.getTranslation("BASIC", "DATE_FROM")
-				+ " (" + Global.PMVIEWER_FILTER_INPUT_DATE_FORMAT + ")");
+				+ " (" + Global.PMVIEWER_FILTER_INPUT_DATE_FORMAT + ")"+":");
 		labelDateTo = new JLabel(lang.getTranslation("BASIC", "DATE_TO") + " ("
-				+ Global.PMVIEWER_FILTER_INPUT_DATE_FORMAT + ")");
+				+ Global.PMVIEWER_FILTER_INPUT_DATE_FORMAT + ")"+":");
 		path = new JTextField();
 		subject = new JTextField();
 		sender = new JTextField();
@@ -71,24 +71,35 @@ public class FilterView {
 
 		setMessages(messages);
 
-		GridBagConstraints gridBagConstraints = new GridBagConstraints();
-		gridBagConstraints.gridwidth = GridBagConstraints.REMAINDER; // end row
-		gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
+		GridBagConstraints c1 = new GridBagConstraints();
+		c1.gridwidth = GridBagConstraints.REMAINDER; // end row
+		c1.fill = GridBagConstraints.HORIZONTAL;
+		c1.weightx = 0.9;
+		GridBagConstraints c2 = new GridBagConstraints();
+		c2.fill = GridBagConstraints.HORIZONTAL;
+		c2.weightx = 0.1;
 
 		JPanel filterPanel = new JPanel(new GridBagLayout());
 
-		filterPanel.add(labelPath);
-		filterPanel.add(path, gridBagConstraints);
-		filterPanel.add(labelSubject);
-		filterPanel.add(subject, gridBagConstraints);
-		filterPanel.add(labelSender);
-		filterPanel.add(sender, gridBagConstraints);
-		filterPanel.add(labelDateFrom);
-		filterPanel.add(dateFrom, gridBagConstraints);
-		filterPanel.add(labelDateTo);
-		filterPanel.add(dateTo, gridBagConstraints);
-		filterPanel.add(btnFilter);
-		filterPanel.add(btnClear, gridBagConstraints);
+		filterPanel.add(labelPath, c2);
+		filterPanel.add(path, c1);
+		filterPanel.add(labelSubject, c2);
+		filterPanel.add(subject, c1);
+		filterPanel.add(labelSender, c2);
+		filterPanel.add(sender, c1);
+		filterPanel.add(labelDateFrom, c2);
+		filterPanel.add(dateFrom, c1);
+		filterPanel.add(labelDateTo, c2);
+		filterPanel.add(dateTo, c1);
+
+		c2.fill = GridBagConstraints.NONE;
+		c2.weightx = 0;
+		c2.gridx = 1;
+		c2.anchor  = GridBagConstraints.LINE_START;
+		filterPanel.add(btnFilter, c2);
+
+		c2.gridx = 2;
+		filterPanel.add(btnClear, c2);
 
 		JScrollPane tablePanel = new JScrollPane(table);
 		table.setFillsViewportHeight(true);

@@ -1,5 +1,5 @@
 /**
- * This class represents an element in the XMLDocument. * This class represents an element in the XMLDocument.
+ * This class represents an element in the XMLDocument.
  */
 
 package utilities.xml;
@@ -14,7 +14,6 @@ import nanoxml.XMLElement;
  * 
  * @author Robert Heim
  */
-// FIXME if the user enters bad characters (xml) like "<", ">", etc. for a person/group-name, the next time we try to read the contacts.xml-file, we will fail. -> use CDATA or the user may only use [a-z][a-Z][0-9][:blank:]... .
 public class XMLNode
 {
 	private XMLElement	e;
