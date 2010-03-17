@@ -47,6 +47,7 @@ public class FilterView {
 		table = new JTable(new FilterTableModel());
 		table.getSelectionModel().addListSelectionListener(
 				PMViewer.getInstance().getFilterController());
+		table.setAutoCreateRowSorter(true);
 
 		labelPath = new JLabel(lang.getTranslation("BASIC", "PATH")+":");
 		labelSubject = new JLabel(lang.getTranslation("BASIC", "SUBJECT")+":");

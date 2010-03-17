@@ -49,7 +49,7 @@ public class MessageView {
 		textDate.setEditable(false);
 		textMessage = new JTextArea();
 		textMessage.setLineWrap(true);
-		textMessage.setEditable(false);		
+		textMessage.setEditable(false);
 
 		update();
 

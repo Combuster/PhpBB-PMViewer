@@ -48,6 +48,12 @@ public class MainMenuView {
 		menu.setMnemonic(KeyEvent.VK_P);
 		menuBar.add(menu);
 
+		JMenuItem open = new JMenuItem(lang.getTranslation("BASIC", "OPEN_FOLDER"),
+				KeyEvent.VK_X);
+		open.addActionListener(controller);
+		open.setActionCommand("open");
+		menu.add(open);
+		
 		JMenuItem exit = new JMenuItem(lang.getTranslation("BASIC", "EXIT"),
 				KeyEvent.VK_X);
 		exit.addActionListener(controller);

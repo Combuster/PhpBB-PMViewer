@@ -11,14 +11,14 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Vector;
 
-import controllers.FilterController;
-import controllers.MainMenuController;
-
 import models.Folder;
 import models.Language;
 import models.Message;
+import utilities.BBCode2Html;
 import utilities.xml.XMLDocument;
 import utilities.xml.XMLNode;
+import controllers.FilterController;
+import controllers.MainMenuController;
 
 /**
  * @author Robert Heim
@@ -55,8 +55,6 @@ public class PMViewer {
 		PMV.getLanguage().addLanguageFile("main");
 
 		PMV.setFolder("data");
-		// get folders and messages
-		PMV.readFolders();
 
 		PMV.setFilterController(new FilterController());
 		PMV.setMainMenuController(new MainMenuController());
@@ -93,6 +91,8 @@ public class PMViewer {
 
 	public void setFolder(String folder) {
 		this.folder = folder;
+		// get folders and messages
+		this.readFolders();
 	}
 
 	public String getFolder() {
@@ -242,6 +242,7 @@ public class PMViewer {
 	private void readFile(File file, Folder folder) {
 		XMLDocument doc = new XMLDocument(file);
 		XMLNode phpBB = doc.getRootElement();
+
 		// read messages
 		Vector<XMLNode> pms = phpBB.getChildren("privmsg");
 		for (XMLNode p : pms) {
@@ -264,8 +265,8 @@ public class PMViewer {
 					date = new Date(0);
 				}
 			}
-
-			String message = utf8ToUnicode(p.getChildText("message"));
+			
+			String message = BBCode2Html.parse(utf8ToUnicode(p.getChildText("message")));
 
 			Message m = new Message(file, sender, subject, date, message);
 			folder.addMessage(m);

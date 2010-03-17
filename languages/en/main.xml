@@ -2,6 +2,8 @@
     <group id="BASIC">
 		<entry id="PMVIEWER">PMViewer</entry>
 		<entry id="FOLDER">Folder</entry>
+		<entry id="DIRECTORIES_ONLY">Directories only</entry>
+		<entry id="OPEN_FOLDER">Open folder</entry>
 		<entry id="FILE">File</entry>
 		<entry id="PATH">Path</entry>
 		<entry id="SUBJECT">Subject</entry>
