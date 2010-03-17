@@ -38,7 +38,7 @@ public class FilterController implements ActionListener, ListSelectionListener {
 	public void actionPerformed(ActionEvent event) {
 		FilterView fv = PMViewer.getInstance().getGui().getFilterView();
 		if (event.getActionCommand() == "clear") {
-			fv.setFolderText("");
+			fv.setPathText("");
 			fv.setSubjectText("");
 			fv.setSenderText("");
 			fv.setDateFromText("");
@@ -60,7 +60,7 @@ public class FilterController implements ActionListener, ListSelectionListener {
 			}
 
 			// filter messages to match the users input
-			Vector<Message> msgs = filter(fv.getFolderText(), fv
+			Vector<Message> msgs = filter(fv.getPathText(), fv
 					.getSubjectText(), fv.getSenderText(), df, dt);
 			// set/display matching messages
 			fv.setMessages(msgs);
@@ -96,8 +96,8 @@ public class FilterController implements ActionListener, ListSelectionListener {
 	/**
 	 * filters the messages and returns the matching ones.
 	 * 
-	 * @param folder
-	 *            folder that should contain the messages
+	 * @param path
+	 *            path of the file that should contain the messages
 	 * @param subject
 	 *            subject that the message should match
 	 * @param sender
@@ -108,17 +108,18 @@ public class FilterController implements ActionListener, ListSelectionListener {
 	 *            before that date the message was send
 	 * @return vector of matching messages
 	 */
-	public Vector<Message> filter(String folder, String subject, String sender,
+	public Vector<Message> filter(String path, String subject, String sender,
 			Date dateFrom, Date dateTo) {
 
 		Vector<Message> messages = new Vector<Message>();
 
 		for (Folder f : PMViewer.getInstance().getFolders()) {
 			// TODO add File between Folder and message
-			if (f.getPath().contains(folder)) {
+			if (f.getPath().contains(path)) {
 				for (Message m : f.getMessages()) {
-					if ((m.getSubject().contains(subject) && m.getSender()
-							.contains(sender))
+					if ((m.getSubject().toLowerCase().contains(
+							subject.toLowerCase()) && m.getSender()
+							.toLowerCase().contains(sender.toLowerCase()))
 							&& (dateFrom == null
 									|| dateFrom.before(m.getDate()) || dateFrom
 									.equals(m.getDate())

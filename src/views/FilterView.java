@@ -26,12 +26,12 @@ import models.Message;
 public class FilterView {
 	private JPanel panel;
 	private JTable table;
-	private JLabel labelFolder;
+	private JLabel labelPath;
 	private JLabel labelSubject;
 	private JLabel labelSender;
 	private JLabel labelDateFrom;
 	private JLabel labelDateTo;
-	private JTextField folder;
+	private JTextField path;
 	private JTextField subject;
 	private JTextField sender;
 	private JTextField dateFrom;
@@ -48,14 +48,14 @@ public class FilterView {
 		table.getSelectionModel().addListSelectionListener(
 				PMViewer.getInstance().getFilterController());
 
-		labelFolder = new JLabel(lang.getTranslation("BASIC", "FOLDER"));
+		labelPath = new JLabel(lang.getTranslation("BASIC", "PATH"));
 		labelSubject = new JLabel(lang.getTranslation("BASIC", "SUBJECT"));
 		labelSender = new JLabel(lang.getTranslation("BASIC", "SENDER"));
 		labelDateFrom = new JLabel(lang.getTranslation("BASIC", "DATE_FROM")
 				+ " (" + Global.PMVIEWER_FILTER_INPUT_DATE_FORMAT + ")");
 		labelDateTo = new JLabel(lang.getTranslation("BASIC", "DATE_TO") + " ("
 				+ Global.PMVIEWER_FILTER_INPUT_DATE_FORMAT + ")");
-		folder = new JTextField();
+		path = new JTextField();
 		subject = new JTextField();
 		sender = new JTextField();
 		dateFrom = new JTextField();
@@ -77,8 +77,8 @@ public class FilterView {
 
 		JPanel filterPanel = new JPanel(new GridBagLayout());
 
-		filterPanel.add(labelFolder);
-		filterPanel.add(folder, gridBagConstraints);
+		filterPanel.add(labelPath);
+		filterPanel.add(path, gridBagConstraints);
 		filterPanel.add(labelSubject);
 		filterPanel.add(subject, gridBagConstraints);
 		filterPanel.add(labelSender);
@@ -135,12 +135,12 @@ public class FilterView {
 		return messagesView;
 	}
 
-	public void setFolderText(String s) {
-		folder.setText(s);
+	public void setPathText(String s) {
+		path.setText(s);
 	}
 
-	public String getFolderText() {
-		return folder.getText();
+	public String getPathText() {
+		return path.getText();
 	}
 
 	public void setSubjectText(String s) {

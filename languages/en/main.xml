@@ -3,6 +3,7 @@
 		<entry id="PMVIEWER">PMViewer</entry>
 		<entry id="FOLDER">Folder</entry>
 		<entry id="FILE">File</entry>
+		<entry id="PATH">Path</entry>
 		<entry id="SUBJECT">Subject</entry>
 		<entry id="SENDER">Sender</entry>
 		<entry id="DATE">Date</entry>
