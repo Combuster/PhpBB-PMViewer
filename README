@@ -15,19 +15,23 @@ Where to get the PMViewer?
 * See http://www.robert-heim.de/PMViewer for more information
 * Source-Code: http://github.com/Combuster/PhpBB-PMViewer
 
+SCREENSHOTS
+===========
+See http://www.robert-heim.de/PMViewer
+
 INSTALL/USAGE
 =============
 1) Messages
-	* Put your messages in the data/ directory.
+	* On lunch the PMViewer fetches pm-data from the data/ folder. You can put your messages into that directory.
+	* But you can open other folders during runtime from the menu "PMViewer" -> "Open folder", too.
 2) Start
 	* Start the PMViewer.jar ("java -jar PMViewer.jar").
+	* On Windows you may double-click the PMViewer.jar .
 3) Browse/read
 	* You may filter your PMs in the Filter-View by selecting PMs in the table
 	  and/or by using the filter-form.
+	* You can sort the table by clicking on the column-headlines. 
 	* Smile! :-)
-
-TODO for v0.1.0
-===============
 
 CHANGELOG
 =========
