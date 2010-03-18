@@ -35,3 +35,14 @@ INSTALL/USAGE
 
 CHANGELOG
 =========
+since 0.1.1b
+------------
+-
+
+since 0.1.0b
+------------
+* New GUI
+* Messages are displayed in a textArea, that's smaller and more handy
+* Windows look & feel
+* [Change] btnClear -> no message is displayed instead of all.
+* [Fix] old dateformat was wrong (yyyy -> yy)
