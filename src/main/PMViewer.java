@@ -17,8 +17,7 @@ import models.Message;
 import utilities.BBCode2Html;
 import utilities.xml.XMLDocument;
 import utilities.xml.XMLNode;
-import controllers.FilterController;
-import controllers.MainMenuController;
+import controllers.MainWindowController;
 
 /**
  * @author Robert Heim
@@ -27,7 +26,7 @@ import controllers.MainMenuController;
 public class PMViewer {
 
 	private static String applicationName = "PMViewer";
-	private static String version = "0.1.0b";
+	private static String version = "0.1.1b";
 	/** Singleton design pattern */
 	private static PMViewer instance;
 	/** folder that contains the data.xml files (or in subfolders) */
@@ -36,9 +35,8 @@ public class PMViewer {
 	private Gui gui;
 	/** folders found in the "folder". */
 	private HashSet<Folder> folders;
-	/** Controller for the filter */
-	private FilterController filterController;
-	private MainMenuController mainMenuController;
+	/** Controller for the MainMenu */
+	private MainWindowController mainWindowController;
 
 	/**
 	 * @param args
@@ -55,15 +53,11 @@ public class PMViewer {
 		PMV.getLanguage().addLanguageFile("main");
 
 		PMV.setFolder("data");
-
-		PMV.setFilterController(new FilterController());
-		PMV.setMainMenuController(new MainMenuController());
+		
+		PMV.setMainWindowController(new MainWindowController());
 
 		// Set up the GUI
 		PMV.gui = new Gui(applicationName + " " + version);
-		PMV.gui.getFrame().setJMenuBar(
-				PMV.gui.getMainMenuView().createMenuBar());
-
 	}
 
 	/**
@@ -123,10 +117,6 @@ public class PMViewer {
 		this.folders.remove(folder);
 	}
 
-	public boolean hasFolder(Folder folder) {
-		return folders.contains(folder);
-	}
-
 	/**
 	 * @param gui
 	 *            the gui to set
@@ -143,33 +133,17 @@ public class PMViewer {
 	}
 
 	/**
-	 * @param filterController
-	 *            the filterController to set
+	 * @param mainWindowController the mainWindowController to set
 	 */
-	public void setFilterController(FilterController filterController) {
-		this.filterController = filterController;
+	public void setMainWindowController(MainWindowController mainWindowController) {
+		this.mainWindowController = mainWindowController;
 	}
 
 	/**
-	 * @return the filterController
+	 * @return the mainWindowController
 	 */
-	public FilterController getFilterController() {
-		return filterController;
-	}
-
-	/**
-	 * @param mainMenuController
-	 *            the mainMenuController to set
-	 */
-	public void setMainMenuController(MainMenuController mainMenuController) {
-		this.mainMenuController = mainMenuController;
-	}
-
-	/**
-	 * @return the mainMenuController
-	 */
-	public MainMenuController getMainMenuController() {
-		return mainMenuController;
+	public MainWindowController getMainWindowController() {
+		return mainWindowController;
 	}
 
 	/**

@@ -13,10 +13,12 @@
 		<entry id="DATE_TO">Date to</entry>
 		<entry id="FILTER">Filter</entry>
 		<entry id="CLEAR">Clear</entry>
-		<entry id="MESSAGES_VIEW">Messages-View</entry>
+		<entry id="MESSAGES">Messages</entry>
 		<entry id="FILTER_VIEW">Filter-View</entry>
 		<entry id="MESSAGE">Message</entry>
-		<entry id="INFO">Info</entry>
+		<entry id="ABOUT">About</entry>
 		<entry id="EXIT">Exit</entry>
+		<entry id="OVERVIEW">Overview</entry>
+		<entry id="HELP">Help</entry>
 	</group>
 </lang>
