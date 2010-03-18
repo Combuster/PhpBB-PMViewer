@@ -3,6 +3,9 @@ package models;
 import java.io.File;
 import java.util.Date;
 
+/**
+ * @author Robert Heim
+ */
 public class Message {
 	private File file;
 	private String sender;
@@ -107,9 +110,9 @@ public class Message {
 	public String getMessage() {
 		return message;
 	}
-	
-	public String toString()
-	{
-		return "Sender: "+sender+"\n"+"Subject: "+subject+"\n"+"Message: "+message+"\n";
+
+	public String toString() {
+		return "Sender: " + sender + "\n" + "Subject: " + subject + "\n"
+				+ "Message: " + message + "\n";
 	}
 }

@@ -1,4 +1,3 @@
-
 package models;
 
 /**
@@ -12,22 +11,21 @@ import java.util.HashMap;
  * 
  * @author Robert Heim
  */
-public class Language
-{
+public class Language {
 	/** the language that we fall back to, if a word is not found. */
-	private Language						fallBackLang;
+	private Language fallBackLang;
 	/** defines if this language is the fallBackLangugage */
-	private boolean							isFallBackLang		= false;
+	private boolean isFallBackLang = false;
 	/** the standard language id */
-	public static String					fallBackLanguage	= "en";
+	public static String fallBackLanguage = "en";
 	/** the id of the language ('en', 'de', etc..) */
-	private String							id;
+	private String id;
 	/** all files that are registered to the Language */
-	private HashMap<String, LanguageFile>	files;
+	private HashMap<String, LanguageFile> files;
 	/** the folder where all language files lay in */
-	private String							folder;
+	private String folder;
 	/** the string to use for unknown words */
-	public static final String		UNKNOWN_WORD	= "(?)";
+	public static final String UNKNOWN_WORD = "(?)";
 
 	/**
 	 * Initializes the language
@@ -37,15 +35,13 @@ public class Language
 	 * @param id
 	 *            the id of the language
 	 */
-	public Language(String folder, String id)
-	{
+	public Language(String folder, String id) {
 		this.id = id;
 		this.folder = folder + "/" + id;
 		files = new HashMap<String, LanguageFile>();
 		if (id != "en")
 			this.fallBackLang = new Language(folder, "en", true);
-		else
-		{
+		else {
 			this.isFallBackLang = true;
 		}
 	}
@@ -58,10 +54,10 @@ public class Language
 	 * @param id
 	 *            the id of the language
 	 * @param isFallBack
-	 *            defines, that this is the fallback language object and thats why there is no need for another fallback.
+	 *            defines, that this is the fallback language object and thats
+	 *            why there is no need for another fallback.
 	 */
-	private Language(String folder, String id, Boolean isFallBack)
-	{
+	private Language(String folder, String id, Boolean isFallBack) {
 		this.id = id;
 		this.folder = folder + "/" + id;
 		this.isFallBackLang = isFallBack;
@@ -73,15 +69,13 @@ public class Language
 	 * 
 	 * @param file
 	 *            the file without ".xml" realtive to the languages-folder
-	 *            example: "modes/basic"
-	 *            for the file: ./languages/en/modes/basic.xml
+	 *            example: "modes/basic" for the file:
+	 *            ./languages/en/modes/basic.xml
 	 */
-	public void addLanguageFile(String file)
-	{
+	public void addLanguageFile(String file) {
 		LanguageFile f = new LanguageFile(folder + "/" + file + ".xml");
 		files.put(file, f);
-		if (!isFallBackLang && fallBackLang != null)
-		{
+		if (!isFallBackLang && fallBackLang != null) {
 			fallBackLang.addLanguageFile(file);
 		}
 	}
@@ -97,8 +91,7 @@ public class Language
 	 *            the id of the translation within the group
 	 * @return null if there is no entry for group#attr_id
 	 */
-	public String getTranslation(String file, String group, String attr_id)
-	{
+	public String getTranslation(String file, String group, String attr_id) {
 		LanguageFile f = files.get(file);
 		if (f == null)
 			return UNKNOWN_WORD;
@@ -121,16 +114,14 @@ public class Language
 	 *            the id of the translation within the group
 	 * @return null if there is no entry for group#attr_id
 	 */
-	public String getTranslation(String group, String attr_id)
-	{
+	public String getTranslation(String group, String attr_id) {
 		return getTranslation("main", group, attr_id);
 	}
 
 	/**
 	 * @return the id
 	 */
-	public String getId()
-	{
+	public String getId() {
 		return id;
 	}
 }

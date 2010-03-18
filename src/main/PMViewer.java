@@ -53,7 +53,7 @@ public class PMViewer {
 		PMV.getLanguage().addLanguageFile("main");
 
 		PMV.setFolder("data");
-		
+
 		PMV.setMainWindowController(new MainWindowController());
 
 		// Set up the GUI
@@ -133,9 +133,11 @@ public class PMViewer {
 	}
 
 	/**
-	 * @param mainWindowController the mainWindowController to set
+	 * @param mainWindowController
+	 *            the mainWindowController to set
 	 */
-	public void setMainWindowController(MainWindowController mainWindowController) {
+	public void setMainWindowController(
+			MainWindowController mainWindowController) {
 		this.mainWindowController = mainWindowController;
 	}
 
@@ -239,8 +241,9 @@ public class PMViewer {
 					date = new Date(0);
 				}
 			}
-			
-			String message = BBCode2Html.parse(utf8ToUnicode(p.getChildText("message")));
+
+			String message = BBCode2Html.parse(utf8ToUnicode(p
+					.getChildText("message")));
 
 			Message m = new Message(file, sender, subject, date, message);
 			folder.addMessage(m);

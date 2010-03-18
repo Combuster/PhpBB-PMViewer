@@ -14,9 +14,8 @@ import nanoxml.XMLElement;
  * 
  * @author Robert Heim
  */
-public class XMLDocument
-{
-	private XMLNode	root;
+public class XMLDocument {
+	private XMLNode root;
 
 	/**
 	 * initializes a new XMLDocument
@@ -24,8 +23,7 @@ public class XMLDocument
 	 * @param file
 	 *            the file to parse
 	 */
-	public XMLDocument(File file)
-	{
+	public XMLDocument(File file) {
 		buildDoc(file);
 	}
 
@@ -35,8 +33,7 @@ public class XMLDocument
 	 * @param file
 	 *            the file to parse
 	 */
-	public XMLDocument(String file)
-	{
+	public XMLDocument(String file) {
 		buildDoc(new File(file));
 	}
 
@@ -46,15 +43,12 @@ public class XMLDocument
 	 * @param file
 	 *            the file to parse
 	 */
-	private void buildDoc(File file)
-	{
+	private void buildDoc(File file) {
 		XMLElement root_innerType = new XMLElement();
-		try
-		{
+		try {
 			FileReader reader = new FileReader(file);
 			root_innerType.parseFromReader(reader);
-		} catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		root = new XMLNode(root_innerType);
@@ -65,8 +59,7 @@ public class XMLDocument
 	 * 
 	 * @return the rootElement of the tree
 	 */
-	public XMLNode getRootElement()
-	{
+	public XMLNode getRootElement() {
 		return root;
 	}
 }

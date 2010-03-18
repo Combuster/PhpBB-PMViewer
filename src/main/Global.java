@@ -9,8 +9,7 @@ package main;
  * 
  * @author Robert Heim
  */
-public class Global
-{
+public class Global {
 	public static final Boolean DEBUG = true;
 	public static final String PMVIEWER_DATE_FORMAT = "E dd.MM.yyyy - HH:mm";
 	public static final String PMVIEWER_FILTER_INPUT_DATE_FORMAT = "dd.MM.yyyy HH:mm";

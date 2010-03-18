@@ -22,8 +22,8 @@ public class FilterTableModel extends AbstractTableModel {
 					"SUBJECT"),
 			PMViewer.getInstance().getLanguage().getTranslation("BASIC",
 					"SENDER"),
-			PMViewer.getInstance().getLanguage().getTranslation("BASIC",
-					"PATH") };
+			PMViewer.getInstance().getLanguage()
+					.getTranslation("BASIC", "PATH") };
 
 	private Vector<Message> messages;
 
@@ -32,11 +32,10 @@ public class FilterTableModel extends AbstractTableModel {
 	}
 
 	@Override
-	public String getColumnName(int col)
-	{
+	public String getColumnName(int col) {
 		return columnNames[col];
 	}
-	
+
 	@Override
 	public int getColumnCount() {
 		return columnNames.length;
@@ -55,8 +54,9 @@ public class FilterTableModel extends AbstractTableModel {
 
 		switch (arg1) {
 		case 0:
-			SimpleDateFormat formatter = new SimpleDateFormat(Global.PMVIEWER_DATE_FORMAT);
-			return formatter.format(m.getDate().getTime());	
+			SimpleDateFormat formatter = new SimpleDateFormat(
+					Global.PMVIEWER_DATE_FORMAT);
+			return formatter.format(m.getDate().getTime());
 		case 1:
 			return m.getSubject();
 		case 2:
@@ -70,7 +70,8 @@ public class FilterTableModel extends AbstractTableModel {
 
 	/**
 	 * Gets all current messages in the table.
-	 * @return all current messages in the table 
+	 * 
+	 * @return all current messages in the table
 	 */
 	public Vector<Message> getMessages() {
 		return messages;
@@ -78,7 +79,9 @@ public class FilterTableModel extends AbstractTableModel {
 
 	/**
 	 * Gets the message-object from a row.
-	 * @param row the row of the message
+	 * 
+	 * @param row
+	 *            the row of the message
 	 * @return the message-object
 	 */
 	public Message getMessageAt(int row) {
@@ -88,16 +91,15 @@ public class FilterTableModel extends AbstractTableModel {
 	public void update(Vector<Message> messages) {
 		this.messages = messages;
 	}
-	
-	 /*
-     * JTable uses this method to determine the default renderer/
-     * editor for each cell.  If we didn't implement this method,
-     * then the last column would contain text ("true"/"false"),
-     * rather than a check box.
-     */
-    @SuppressWarnings("unchecked")
+
+	/*
+	 * JTable uses this method to determine the default renderer/ editor for
+	 * each cell. If we didn't implement this method, then the last column would
+	 * contain text ("true"/"false"), rather than a check box.
+	 */
+	@SuppressWarnings("unchecked")
 	public Class getColumnClass(int c) {
-        return getValueAt(0, c).getClass();
-    }
+		return getValueAt(0, c).getClass();
+	}
 
 }

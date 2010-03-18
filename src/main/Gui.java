@@ -24,7 +24,8 @@ public class Gui {
 		}
 
 		// create main Window
-		setMainWindowView(new MainWindowView(frameName, PMViewer.getInstance().getAllMessages()));
+		setMainWindowView(new MainWindowView(frameName, PMViewer.getInstance()
+				.getAllMessages()));
 		runGui();
 	}
 
@@ -40,7 +41,8 @@ public class Gui {
 	}
 
 	/**
-	 * @param mainWindowView the mainWindowView to set
+	 * @param mainWindowView
+	 *            the mainWindowView to set
 	 */
 	public void setMainWindowView(MainWindowView mainWindowView) {
 		this.mainWindowView = mainWindowView;

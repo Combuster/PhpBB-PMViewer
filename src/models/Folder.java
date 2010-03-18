@@ -61,9 +61,8 @@ public class Folder {
 	public boolean hasMessage(Message message) {
 		return this.messages.contains(message);
 	}
-	
-	public String toString()
-	{
+
+	public String toString() {
 		return getPath();
 	}
 }
